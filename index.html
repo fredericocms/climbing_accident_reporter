@@ -5,75 +5,47 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Climbing Accident Reporter</title>
   <style>
-    :root {
-      --primary: #2a4d2e;
-      --background: #ffffff;
-      --text: #222;
-      --accent: #77917f;
-    }
-
-    @media (prefers-color-scheme: dark) {
-      :root {
-        --background: #121212;
-        --text: #f0f0f0;
-        --accent: #88c0a9;
-      }
-    }
-
     body {
       margin: 0;
       font-family: 'Segoe UI', sans-serif;
-      background: var(--background);
-      color: var(--text);
+      background: #f9f9f9;
+      color: #222;
       display: flex;
       flex-direction: column;
       align-items: center;
+      padding: 0;
     }
 
     .hero-image {
       width: 100%;
-      height: 320px;
-      background-image: url('https://images.unsplash.com/photo-1601597111023-5ecae2d06f3c?ixlib=rb-4.0.3&auto=format&fit=crop&w=1950&q=80');
+      height: 300px;
+      background-image: url('https://images.unsplash.com/photo-1508264165352-258db2ebd59b?ixlib=rb-4.0.3&auto=format&fit=crop&w=1950&q=80');
       background-size: cover;
       background-position: center;
-      position: relative;
-    }
-
-    .hero-logo {
-      position: absolute;
-      top: 20px;
-      left: 20px;
-      width: 100px;
+      filter: brightness(85%);
     }
 
     header {
       text-align: center;
       padding: 2rem;
-      margin-top: -60px;
-      background-color: rgba(255, 255, 255, 0.95);
+      margin-top: -80px;
+      background-color: rgba(255, 255, 255, 0.9);
       border-radius: 12px;
       box-shadow: 0 0 12px rgba(0,0,0,0.05);
+      position: relative;
+      z-index: 1;
       max-width: 800px;
       width: 90%;
-      z-index: 1;
-      position: relative;
     }
 
     header h1 {
-      font-size: 2.4rem;
+      font-size: 2.5rem;
       margin: 0.5rem 0;
     }
 
     header p {
-      font-size: 1rem;
-      color: #555;
-    }
-
-    .lang-switcher {
-      position: absolute;
-      top: 10px;
-      right: 20px;
-      font-size: 0.9rem;
+      font-size: 1.1rem;
+      color: #666;
     }
 
     .content {
@@ -81,7 +53,7 @@
       width: 100%;
       background: #fff;
       padding: 2rem;
-      box-shadow: 0 0 12px rgba(0,0,0,0.04);
+      box-shadow: 0 0 12px rgba(0,0,0,0.05);
       border-radius: 12px;
       margin-top: 2rem;
     }
@@ -91,37 +63,32 @@
     }
 
     .section h2 {
-      font-size: 1.3rem;
-      color: var(--primary);
+      font-size: 1.4rem;
+      color: #005f73;
       border-bottom: 1px solid #ddd;
-      padding-bottom: 0.4rem;
+      padding-bottom: 0.5rem;
     }
 
     .chat-placeholder {
       border: 2px dashed #ccc;
       padding: 2rem;
       text-align: center;
-      color: #777;
+      color: #888;
       border-radius: 8px;
-      background: #f2f2f2;
+      background: #fafafa;
     }
 
     footer {
       margin-top: 4rem;
       margin-bottom: 2rem;
-      font-size: 0.85rem;
-      color: #999;
+      font-size: 0.9rem;
+      color: #aaa;
     }
   </style>
 </head>
 <body>
 
-  <div class="hero-image">
-    <img src="https://upload.wikimedia.org/wikipedia/commons/3/33/UIAA_logo.svg" class="hero-logo" alt="UIAA Logo" />
-    <div class="lang-switcher">
-      <a href="#">PT</a> | <a href="#">EN</a>
-    </div>
-  </div>
+  <div class="hero-image"></div>
 
   <header>
     <h1>Climbing Accident Reporter</h1>
@@ -132,31 +99,31 @@
     <div class="section">
       <h2>What is this?</h2>
       <p>
-        This is a community tool to report climbing and mountaineering accidents or near-misses.
-        Reports are anonymous and shared globally to improve learning, prevent future incidents,
-        and foster a strong safety culture.
+        This is a community-driven tool to report climbing and mountaineering accidents or near-miss incidents, in any location.
+        The information presented here can be shared globally through the UIAA associate member federation.
+        Your anonymous input helps climbers learn from past events, prevent future risks, and strengthen safety culture.
       </p>
     </div>
 
     <div class="section">
       <h2>Why contribute?</h2>
       <ul>
-        <li>📌 Strengthen a public, searchable safety database</li>
-        <li>🔍 Help climbers and instructors learn from real cases</li>
-        <li>📈 Share your insights while protecting identities</li>
+        <li>📌 Enhance and support a public, searchable incident database designed to facilitate information sharing—transitioning from a rigid form to a conversation-driven chat format</li>
+        <li>🔍 Improve climber training and awareness</li>
+        <li>📈 Share valuable insights while protecting individual identities</li>
       </ul>
     </div>
 
     <div class="section">
       <h2>Report an Incident</h2>
       <div class="chat-placeholder">
-        Chatbot coming soon. You’ll be able to interact and submit your report here.
+        Chatbot coming soon. Here you'll be able to interact and submit your report.
       </div>
     </div>
   </div>
 
   <footer>
-    &copy; 2025 Climbing Safety Initiative – in partnership with CBME and UIAA
+    &copy; 2025 Climbing Safety Initiative
   </footer>
 
 </body>
