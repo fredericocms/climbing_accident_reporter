@@ -5,11 +5,26 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Climbing Accident Reporter</title>
   <style>
+    :root {
+      --primary: #005f73;
+      --background: #f9f9f9;
+      --text: #222;
+      --accent: #94d2bd;
+    }
+
+    @media (prefers-color-scheme: dark) {
+      :root {
+        --background: #1e1e1e;
+        --text: #f0f0f0;
+        --accent: #0a9396;
+      }
+    }
+
     body {
       margin: 0;
       font-family: 'Segoe UI', sans-serif;
-      background: #f9f9f9;
-      color: #222;
+      background: var(--background);
+      color: var(--text);
       display: flex;
       flex-direction: column;
       align-items: center;
@@ -23,6 +38,14 @@
       background-size: cover;
       background-position: center;
       filter: brightness(85%);
+      position: relative;
+    }
+
+    .hero-logo {
+      position: absolute;
+      top: 20px;
+      left: 20px;
+      width: 100px;
     }
 
     header {
@@ -48,6 +71,13 @@
       color: #666;
     }
 
+    .lang-switcher {
+      position: absolute;
+      top: 10px;
+      right: 20px;
+      font-size: 0.9rem;
+    }
+
     .content {
       max-width: 800px;
       width: 100%;
@@ -64,7 +94,7 @@
 
     .section h2 {
       font-size: 1.4rem;
-      color: #005f73;
+      color: var(--primary);
       border-bottom: 1px solid #ddd;
       padding-bottom: 0.5rem;
     }
@@ -88,7 +118,12 @@
 </head>
 <body>
 
-  <div class="hero-image"></div>
+  <div class="hero-image">
+    <img src="https://upload.wikimedia.org/wikipedia/commons/3/33/UIAA_logo.svg" class="hero-logo" alt="UIAA Logo" />
+    <div class="lang-switcher">
+      <a href="#">PT</a> | <a href="#">EN</a>
+    </div>
+  </div>
 
   <header>
     <h1>Climbing Accident Reporter</h1>
@@ -123,7 +158,7 @@
   </div>
 
   <footer>
-    &copy; 2025 Climbing Safety Initiative
+    &copy; 2025 Climbing Safety Initiative – in partnership with CBME and UIAA
   </footer>
 
 </body>
