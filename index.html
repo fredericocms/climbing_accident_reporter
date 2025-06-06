@@ -16,16 +16,14 @@
       padding: 0;
     }
 
-.hero-image {
-  width: 100%;
-  height: 300px;
-  background-image: url('https://images.unsplash.com/photo-1516372048654-2e06f99e1382?q=80&w=2670&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D');
-  background-size: cover;
-  background-position: center;
-  filter: brightness(85%);
-}
-
-
+    .hero-image {
+      width: 100%;
+      height: 300px;
+      background-image: url('https://images.unsplash.com/photo-1516372048654-2e06f99e1382?q=80&w=2670&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D');
+      background-size: cover;
+      background-position: center;
+      filter: brightness(85%);
+    }
 
     header {
       text-align: center;
@@ -50,7 +48,7 @@
       color: #666;
     }
 
-    .content {
+    main.content {
       max-width: 800px;
       width: 100%;
       background: #fff;
@@ -71,13 +69,13 @@
       padding-bottom: 0.5rem;
     }
 
-    .chat-placeholder {
-      border: 2px dashed #ccc;
-      padding: 2rem;
-      text-align: center;
-      color: #888;
+    .chat-container {
+      border: 1px solid #ccc;
       border-radius: 8px;
-      background: #fafafa;
+      overflow: hidden;
+      box-shadow: 0 0 8px rgba(0, 0, 0, 0.05);
+      background: #fff;
+      margin-top: 1rem;
     }
 
     footer {
@@ -85,6 +83,14 @@
       margin-bottom: 2rem;
       font-size: 0.9rem;
       color: #aaa;
+    }
+
+    ul {
+      padding-left: 1.2em;
+    }
+
+    ul li {
+      margin-bottom: 0.5rem;
     }
   </style>
 </head>
@@ -97,12 +103,12 @@
     <p>Help improve mountain safety by sharing anonymous accident and incident reports.</p>
   </header>
 
-  <div class="content">
+  <main class="content">
     <div class="section">
       <h2>What is this?</h2>
       <p>
         This is a community-driven tool to report climbing and mountaineering accidents or near-miss incidents, in any location.
-        The information presented here can be shared globally through the <name here> associate member federation.
+        The information presented here can be shared globally through the <strong>CBME</strong> associate member federation.
         Your anonymous input helps climbers learn from past events, prevent future risks, and strengthen safety culture.
       </p>
     </div>
@@ -117,12 +123,16 @@
     </div>
 
     <div class="section">
-      <h2>Help Improve Safety – Report an Incident</h2>
-      <div class="chat-placeholder">
-        Chatbot coming soon. Here you'll be able to interact and submit your report.
+      <h2>Report an Incident</h2>
+      <div class="chat-container">
+        <iframe
+          src="https://web.powerva.microsoft.com/environments/Default-65a952b7-1829-4200-b7a4-3c1154154744/bots/cra2f_climbingAccidentReporter/webchat?__version__=2"
+          frameborder="0"
+          style="width: 100%; height: 500px; border-radius: 8px;">
+        </iframe>
       </div>
     </div>
-  </div>
+  </main>
 
   <footer>
     &copy; 2025 Climbing Safety Initiative
