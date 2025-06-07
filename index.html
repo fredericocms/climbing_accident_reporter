@@ -5,7 +5,6 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Climbing Accident Reporter</title>
   <style>
-    html, body { height: 100%; margin: 0; padding: 0; }
     :root {
       --color-bg: #f9f9f9;
       --color-primary: #005f73;
@@ -18,6 +17,8 @@
     }
     *, *::before, *::after {
       box-sizing: border-box;
+      margin: 0;
+      padding: 0;
     }
     body {
       font-family: 'Segoe UI', sans-serif;
@@ -37,11 +38,29 @@
       margin: 0 auto;
       padding: var(--spacing);
     }
-    .nav { display: flex; justify-content: space-between; align-items: center; }
-    .nav-logo { font-size: 1.5rem; font-weight: bold; color: var(--color-primary); }
-    nav ul { list-style: none; display: flex; gap: var(--spacing); }
-    nav a { text-decoration: none; color: var(--color-text); transition: color var(--transition); }
-    nav a:hover { color: var(--color-primary); }
+    .nav {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    .nav-logo {
+      font-size: 1.5rem;
+      font-weight: bold;
+      color: var(--color-primary);
+    }
+    nav ul {
+      list-style: none;
+      display: flex;
+      gap: var(--spacing);
+    }
+    nav a {
+      text-decoration: none;
+      color: var(--color-text);
+      transition: color var(--transition);
+    }
+    nav a:hover {
+      color: var(--color-primary);
+    }
     .hero {
       position: relative;
       background: url('https://images.unsplash.com/photo-1516372048654-2e06f99e1382?q=80&w=2670&auto=format&fit=crop') center/cover no-repeat;
@@ -50,34 +69,92 @@
     .hero::after {
       content: '';
       position: absolute;
-      top: 0; left: 0; width: 100%; height: 100%; background: rgba(0, 0, 0, 0.4);
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(0, 0, 0, 0.4);
     }
     .hero .container {
-      position: relative; z-index: 1; text-align: center;
-      top: 50%; transform: translateY(-50%);
+      position: relative;
+      z-index: 1;
+      text-align: center;
+      top: 50%;
+      transform: translateY(-50%);
       color: #fff;
     }
-    .hero h1 { font-size: 2.5rem; margin-bottom: var(--spacing); }
-    .hero p { font-size: 1.25rem; margin-bottom: var(--spacing); }
+    .hero h1 {
+      font-size: 2.5rem;
+      margin-bottom: var(--spacing);
+    }
+    .hero p {
+      font-size: 1.25rem;
+      margin-bottom: var(--spacing);
+    }
     .hero .btn {
-      display: inline-block; padding: 0.75rem 1.5rem;
-      background: var(--color-secondary); color: #fff;
-      border-radius: var(--radius); text-decoration: none;
+      display: inline-block;
+      padding: 0.75rem 1.5rem;
+      background: var(--color-secondary);
+      color: #fff;
+      border-radius: var(--radius);
+      text-decoration: none;
       transition: opacity var(--transition);
     }
-    .hero .btn:hover { opacity: 0.9; }
-    main { max-width: 800px; margin: 2rem auto; padding: 0 var(--spacing); height: calc(100% - 60vh - 80px); }
-    section { margin-bottom: 2rem; }
-    section h2 {
-      font-size: 1.5rem; color: var(--color-primary);
-      border-bottom: 2px solid var(--color-secondary);
-      padding-bottom: 0.5rem; margin-bottom: var(--spacing);
+    .hero .btn:hover {
+      opacity: 0.9;
     }
-    .chat-iframe { width: 100%; height: 100%; border: none; }
-    footer { text-align: center; padding: var(--spacing) 0; color: var(--color-muted); font-size: 0.875rem; }
+    main {
+      max-width: 800px;
+      margin: 2rem auto;
+      padding: 0 var(--spacing);
+    }
+    section {
+      margin-bottom: 2rem;
+    }
+    section h2 {
+      font-size: 1.5rem;
+      color: var(--color-primary);
+      border-bottom: 2px solid var(--color-secondary);
+      padding-bottom: 0.5rem;
+      margin-bottom: var(--spacing);
+    }
+    .chat-container {
+      border-radius: var(--radius);
+      overflow: hidden;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+      background: #fff;
+    }
+    iframe {
+      width: 100%;
+      height: 500px;
+      border: none;
+      display: block;
+    }
+    footer {
+      text-align: center;
+      padding: var(--spacing) 0;
+      color: var(--color-muted);
+      font-size: 0.875rem;
+    }
     @media (max-width: 768px) {
-      .hero h1 { font-size: 2rem; }
-      .hero p { font-size: 1rem; }
+      .hero h1 {
+        font-size: 2rem;
+      }
+      .hero p {
+        font-size: 1rem;
+      }
+      nav ul {
+        flex-direction: column;
+        background: #fff;
+        position: absolute;
+        top: 100%;
+        right: 0;
+        width: 200px;
+        display: none;
+      }
+      nav ul.show {
+        display: flex;
+      }
     }
   </style>
 </head>
@@ -106,27 +183,23 @@
   <main>
     <section id="what">
       <h2>What is this?</h2>
-      <p>This community-driven chatbot captures climbing and mountaineering incidents in seconds—no long forms, just an easy chat. Contributions go anonymously to the <strong>UIAA Associate Member Federation</strong> for global safety improvements.</p>
+      <p>This is a community-driven chatbot designed to capture climbing and mountaineering accidents or near-miss incidents in seconds. Skip the lengthy forms—just chat, submit, and contribute anonymously to the <strong>UIAA Associate Member Federation</strong> for global safety insights.</p>
     </section>
 
     <section id="why">
       <h2>Why contribute?</h2>
       <ul>
-        <li>📌 Instant chatbot interface—ditch lengthy forms</li>
-        <li>🔍 Enhance training and awareness with real stories</li>
-        <li>📈 Share insights while preserving anonymity</li>
+        <li>📌 Fast chatbot interface—no long forms; build a searchable incident database instantly</li>
+        <li>🔍 Enhance climber training and awareness through real stories</li>
+        <li>📈 Share valuable insights while protecting individual identities</li>
       </ul>
     </section>
 
-    <section id="report" style="height: 60%;">
+    <section id="report">
       <h2>Report an Incident</h2>
-      <!-- Microsoft Power VA iframe embed -->
-      <iframe
-        class="chat-iframe"
-        src="https://web.powerva.microsoft.com/environments/Default-65a952b7-1829-4200-b7a4-3c1154154744/bots/cra2f_climbingAccidentReporter/webchat?__version__=2"
-        title="Climbing Accident Chatbot"
-        frameborder="0">
-      </iframe>
+      <div class="chat-container">
+        <iframe src="https://copilotstudio.microsoft.com/environments/Default-65a952b7-1829-4200-b7a4-3c1154154744/bots/cra2f_climbingAccidentReporter/webchat?__version__=2"></iframe>
+      </div>
     </section>
   </main>
 
